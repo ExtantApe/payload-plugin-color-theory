@@ -18,7 +18,7 @@ It hasn't been used on a live site yet. On a local copy of a real site (Chromium
 - **Payload's admin, too.** It gets its own `--color-base-*`, success, warning and error scales, the variables Payload is themed with, so the admin's own dark mode keeps working. Off until you turn it on.
 - **Readable by construction.** Text passes WCAG AA (4.5:1) on every surface it can sit on: the page, cards, sunken areas and its own soft badge background. Fills stand out from the page (3:1). A brand color that doesn't pass is moved in lightness only, keeping its hue. The editor shows every pair with its ratio.
 - **Light, dark and Auto.** The CSS follows `data-theme="light|dark"` on `<html>`. With no choice saved, it follows the device. `@extantape/payload-plugin-color-theory/mode` has the pieces a site needs:
-  - `colorModeScript()`: an inline script for `<head>`, so the page never flashes the wrong mode. It's exported from the main entry (and `/mode/script`), not `/mode`, so a server layout can call it;
+  - `colorModeScript()`: an inline script for `<head>`, so the page never flashes the wrong mode. Import it from the main entry or `@extantape/payload-plugin-color-theory/mode/script`, neither of which is a client module, so a server layout can call it. The `/mode` entry is a client module and also re-exports it, but a server component can't call it from there;
   - `ColorModeProvider` and `useColorMode()`: in Auto, these follow the device live;
   - `ColorModeSelector`: an Auto / Light / Dark select you can label in any language.
 
