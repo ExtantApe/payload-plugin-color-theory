@@ -1,6 +1,6 @@
 {
   "name": "@extantape/payload-plugin-color-theory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Color Theory for Payload: build site and admin themes from color harmonies (complementary, triadic, tetradic and more), with contrast checked in light and dark, an Auto, Light and Dark switch, and JSON import and export with hex values.",
   "keywords": [
     "payload",
