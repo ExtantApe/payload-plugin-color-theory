@@ -19,6 +19,9 @@ export type ResolvedMode = 'light' | 'dark'
 import { ATTR, KEY, QUERY, type ColorModeOptions } from './script.js'
 
 export type { ColorModeOptions } from './script.js'
+// Kept so client code that imported it from here keeps working. A server component can't call it through this
+// 'use client' entry: import it from the main entry or `/mode/script` instead.
+export { colorModeScript } from './script.js'
 
 const systemMode = (): ResolvedMode => (typeof window !== 'undefined' && window.matchMedia?.(QUERY).matches ? 'dark' : 'light')
 const readChoice = (key: string): ColorMode => {
