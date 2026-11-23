@@ -2,6 +2,12 @@
 
 Newest first.
 
+## 2026-11-22: colorModeScript in the built package (0.1.1)
+
+- Promises: `colorModeScript` can be called from server code: no "use client" in its source, its main entry, `/mode/script` or what they import, a typed server-safe subpath in `exports`, and the same script from source and build.
+- Covered: `test/mode-script.test.ts`.
+- Gaps skipped (and why): the docs-only CI gate and the 0.1.1 version bump have no behaviour to test.
+
 ## 2026-11-10: brand intensity, exact colors, UI kit
 
 37 tests: core 20, plugin 6, mode 5, editor 6 (`test/editor.test.tsx`, jsdom, Payload's `useField` replaced with React state).
